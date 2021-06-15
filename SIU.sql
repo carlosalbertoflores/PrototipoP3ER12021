@@ -1,4 +1,3 @@
-DROP DATABASE siu;
 CREATE DATABASE siu;
 USE siu;
 -- -----------------------------------------------------
@@ -124,6 +123,8 @@ CREATE TABLE asignacioncursosalumnos
 -- -----------------------------------------------------
 CREATE TABLE asignacioncursosmastros
 (
+
+
   codigo_carrera VARCHAR(5),
   codigo_sede VARCHAR(5),
   codigo_jornada VARCHAR(5),
@@ -140,4 +141,37 @@ CREATE TABLE asignacioncursosmastros
   FOREIGN KEY (codigo_curso) REFERENCES cursos(codigo_curso),
   FOREIGN KEY (codigo_maestro) REFERENCES maestros(codigo_maestro)
   ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+  
+  CREATE TABLE IF NOT EXISTS `siu`.`tbl_usuario` (
+  `PK_id_usuario` VARCHAR(25) NOT NULL,
+  `nombre_usuario` VARCHAR(45) NULL DEFAULT NULL,
+  `apellido_usuario` VARCHAR(45) NULL DEFAULT NULL,
+  `username_usuario` VARCHAR(45) NULL DEFAULT NULL,
+  `password_usuario` VARCHAR(45) NULL DEFAULT NULL,
+  `correo_usuario` VARCHAR(45) NULL DEFAULT NULL,
+  `cambio_password` TINYINT NULL DEFAULT NULL,
+  `estado_usuario` TINYINT NULL DEFAULT NULL,
+  `ultima_conexion` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`PK_id_usuario`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+  
+  CREATE TABLE IF NOT EXISTS `siu`.`tbl_bitacora` (
+  `PK_id_bitacora` INT NOT NULL AUTO_INCREMENT,
+  `PK_id_usuario` VARCHAR(25) NOT NULL,
+  `fecha` VARCHAR(25)  null DEFAULT NULL,
+  `hora` VARCHAR(25) NULL DEFAULT NULL,
+  `host1` VARCHAR(45) NULL DEFAULT NULL,
+  `ip` VARCHAR(25) NULL DEFAULT NULL,
+  `accion` VARCHAR(50) NULL DEFAULT NULL,
+  `tabla` VARCHAR(45) NULL DEFAULT NULL,
+`PK_id_Modulo` int (25) NULL DEFAULT NULL,
+PRIMARY KEY (`PK_id_bitacora`),
+ CONSTRAINT `fk_PK_id_Modulo`
+ FOREIGN KEY (`PK_id_Modulo`)
+REFERENCES `umg`.`tbl_modulo` (`PK_id_Modulo`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO `tbl_usuario` (`PK_id_usuario`, `nombre_usuario`, `apellido_usuario`, `username_usuario`, `password_usuario`, `correo_usuario`, `cambio_password`, `estado_usuario`, `ultima_conexion`) VALUES ('11', 'carlos', 'carlos', 'carlos', '8cb2237d0679ca88db6464eac60da96345513964', 'cflorezd@gmail.com', '1', '1', '2021-05-02 21:00:48');
