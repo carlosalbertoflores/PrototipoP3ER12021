@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import mantenimineto.vista.mantenimineto_alumno;
 import proceso.vista.proceso_recuperacion;
 import seguridad.dominio.Usuario;
 
@@ -20,7 +21,7 @@ public class contenedor extends javax.swing.JFrame {
 
 private proceso_recuperacion proceso_recuperacion; 
     private FmrBitacora formFmrBitacora;
-
+private   mantenimineto_alumno   mantenimineto_alumno ;
     /**
      * Creates new form MDI_Seguridad
      *
@@ -55,17 +56,19 @@ private proceso_recuperacion proceso_recuperacion;
         ;
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        JMenu_Archivo = new javax.swing.JMenu();
-        JMenuItem_CerrarSesion = new javax.swing.JMenuItem();
-        JMenu_Seguridad = new javax.swing.JMenu();
-        JMenu_Asignaciones = new javax.swing.JMenu();
-        JMenuItem_PerfilesUsuarios = new javax.swing.JMenuItem();
-        JMenuItem_AplicacionesModulos = new javax.swing.JMenuItem();
-        JMenuItem_Bitacora = new javax.swing.JMenuItem();
-        JMenu_Mantenimientos = new javax.swing.JMenu();
-        JMenuItem_Usuarios = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        M_ccompras = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu13 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        cerrar_sesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Hotelero");
@@ -92,86 +95,88 @@ private proceso_recuperacion proceso_recuperacion;
             .addGroup(JDesktopPane_EscritorioLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(jLabel1)
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(603, Short.MAX_VALUE))
         );
 
-        JMenu_Archivo.setText("Archivo");
-        JMenu_Archivo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
-        JMenuItem_CerrarSesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_CerrarSesion.setText("Cerrar Sesión");
-        JMenuItem_CerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+        jMenu1.setText("Archivo");
+        jMenu1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu1);
+
+        M_ccompras.setText("Catalogos");
+        M_ccompras.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jMenuItem3.setText("Mantenimiento Alumno");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_CerrarSesionActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        JMenu_Archivo.add(JMenuItem_CerrarSesion);
+        M_ccompras.add(jMenuItem3);
 
-        jMenuBar1.add(JMenu_Archivo);
+        jMenuBar1.add(M_ccompras);
 
-        JMenu_Seguridad.setText("Seguridad");
-        JMenu_Seguridad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jMenu4.setText("Procesos");
+        jMenu4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
 
-        JMenu_Asignaciones.setText("Asignaciones");
-        JMenu_Asignaciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        JMenuItem_PerfilesUsuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_PerfilesUsuarios.setText("Perfiles - Usuarios");
-        JMenuItem_PerfilesUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Proceso de Pago de  Recuperacion");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_PerfilesUsuariosActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        JMenu_Asignaciones.add(JMenuItem_PerfilesUsuarios);
+        jMenu4.add(jMenuItem2);
 
-        JMenuItem_AplicacionesModulos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_AplicacionesModulos.setText("Aplicaciones - Módulos");
-        JMenuItem_AplicacionesModulos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_AplicacionesModulosActionPerformed(evt);
-            }
-        });
-        JMenu_Asignaciones.add(JMenuItem_AplicacionesModulos);
+        jMenuBar1.add(jMenu4);
 
-        JMenu_Seguridad.add(JMenu_Asignaciones);
+        jMenu12.setText("Informes");
+        jMenu12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
 
-        JMenuItem_Bitacora.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_Bitacora.setText("Bitácora");
-        JMenuItem_Bitacora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_BitacoraActionPerformed(evt);
-            }
-        });
-        JMenu_Seguridad.add(JMenuItem_Bitacora);
+        jMenu13.setText("Historial");
 
-        JMenu_Mantenimientos.setText("Mantenimientos");
-        JMenu_Mantenimientos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        JMenuItem_Usuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_Usuarios.setText("Usuarios");
-        JMenuItem_Usuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_UsuariosActionPerformed(evt);
-            }
-        });
-        JMenu_Mantenimientos.add(JMenuItem_Usuarios);
-
-        JMenu_Seguridad.add(JMenu_Mantenimientos);
-
-        jMenuBar1.add(JMenu_Seguridad);
-
-        jMenu1.setText("Procesos");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        jMenuItem1.setText("Recuperacion");
+        jMenuItem1.setText("Bitacora Comercial");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu13.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        jMenu12.add(jMenu13);
+
+        jMenuBar1.add(jMenu12);
+
+        jMenu6.setText("Herramientas");
+        jMenu6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu6);
+
+        jMenu7.setText("Ayuda");
+        jMenu7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+
+        jMenu11.setText("Ayuda");
+        jMenu11.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+
+        jMenuItem7.setText("Ayuda Menu");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem7);
+
+        jMenu7.add(jMenu11);
+
+        jMenuBar1.add(jMenu7);
+
+        cerrar_sesion.setText("Cerrar Sesión");
+        cerrar_sesion.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        cerrar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cerrar_sesionMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(cerrar_sesion);
 
         setJMenuBar(jMenuBar1);
 
@@ -191,17 +196,6 @@ private proceso_recuperacion proceso_recuperacion;
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void JMenuItem_CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_CerrarSesionActionPerformed
-        /*===== OPERACIÓN CERRAR SESIÓN ====
-          Variable entera respuesta_cs*/
-
-        int respuesta_cs = JOptionPane.showConfirmDialog(this, "¿Desea Cerrar Sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
-
-        if (respuesta_cs == 0) {
-            this.dispose();
-        }
-    }//GEN-LAST:event_JMenuItem_CerrarSesionActionPerformed
-
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
       
@@ -209,32 +203,36 @@ private proceso_recuperacion proceso_recuperacion;
 
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-    private void JMenuItem_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_UsuariosActionPerformed
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
 
-    }//GEN-LAST:event_JMenuItem_UsuariosActionPerformed
+        mantenimineto_alumno = new mantenimineto_alumno();
+        mantenimineto_alumno.setVisible(true);
+        JDesktopPane_Escritorio.add(mantenimineto_alumno);
 
-    private void JMenuItem_BitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_BitacoraActionPerformed
-        formFmrBitacora = new FmrBitacora();
-        formFmrBitacora.setVisible(true);
-        JDesktopPane_Escritorio.add(formFmrBitacora);
-    }//GEN-LAST:event_JMenuItem_BitacoraActionPerformed
-
-    private void JMenuItem_AplicacionesModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesModulosActionPerformed
-        //  Asignacionmodulos Rita Sipaque
-
-    }//GEN-LAST:event_JMenuItem_AplicacionesModulosActionPerformed
-
-    private void JMenuItem_PerfilesUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_PerfilesUsuariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JMenuItem_PerfilesUsuariosActionPerformed
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-   proceso_recuperacion = new proceso_recuperacion();
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        proceso_recuperacion = new proceso_recuperacion();
         proceso_recuperacion.setVisible(true);
         JDesktopPane_Escritorio.add(proceso_recuperacion);
 
         // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void cerrar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrar_sesionMouseClicked
+
+    }//GEN-LAST:event_cerrar_sesionMouseClicked
 
 
     /**
@@ -262,18 +260,20 @@ private proceso_recuperacion proceso_recuperacion;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane JDesktopPane_Escritorio;
-    public static javax.swing.JMenuItem JMenuItem_AplicacionesModulos;
-    public static javax.swing.JMenuItem JMenuItem_Bitacora;
-    private javax.swing.JMenuItem JMenuItem_CerrarSesion;
-    public static javax.swing.JMenuItem JMenuItem_PerfilesUsuarios;
-    public static javax.swing.JMenuItem JMenuItem_Usuarios;
-    public javax.swing.JMenu JMenu_Archivo;
-    public static javax.swing.JMenu JMenu_Asignaciones;
-    public static javax.swing.JMenu JMenu_Mantenimientos;
-    public javax.swing.JMenu JMenu_Seguridad;
+    public static javax.swing.JMenu M_ccompras;
+    public static javax.swing.JMenu cerrar_sesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    public static javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
