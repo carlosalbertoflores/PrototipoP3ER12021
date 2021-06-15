@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import proceso.vista.proceso_recuperacion;
 import seguridad.dominio.Usuario;
 
 import seguridad.dominio.Permisos;
@@ -13,11 +14,11 @@ import seguridad.dominio.Usuario;
 
 /**
  *
- * @author Diego Vásquez
+ * @author 
  */
-public class MDI_Sistema extends javax.swing.JFrame {
+public class contenedor extends javax.swing.JFrame {
 
- 
+private proceso_recuperacion proceso_recuperacion; 
     private FmrBitacora formFmrBitacora;
 
     /**
@@ -30,7 +31,7 @@ public class MDI_Sistema extends javax.swing.JFrame {
  
 
     /*------------------------------------------*/
-    public MDI_Sistema() throws UnknownHostException {
+    public contenedor() throws UnknownHostException {
         initComponents();
 
         this.setTitle("Usuario: " + "[" + Login.usuarioSesion + "]" + " \t" + "IP: [" + mdi_components.getIp() + "]");
@@ -52,22 +53,19 @@ public class MDI_Sistema extends javax.swing.JFrame {
 
         JDesktopPane_Escritorio = new javax.swing.JDesktopPane()
         ;
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         JMenu_Archivo = new javax.swing.JMenu();
         JMenuItem_CerrarSesion = new javax.swing.JMenuItem();
         JMenu_Seguridad = new javax.swing.JMenu();
         JMenu_Asignaciones = new javax.swing.JMenu();
-        JMenuItem_AplicacionesUsuario = new javax.swing.JMenuItem();
-        JMenuItem_AplicacionesPerfiles = new javax.swing.JMenuItem();
         JMenuItem_PerfilesUsuarios = new javax.swing.JMenuItem();
         JMenuItem_AplicacionesModulos = new javax.swing.JMenuItem();
         JMenuItem_Bitacora = new javax.swing.JMenuItem();
         JMenu_Mantenimientos = new javax.swing.JMenu();
         JMenuItem_Usuarios = new javax.swing.JMenuItem();
-        JMenuItem_Aplicaciones = new javax.swing.JMenuItem();
-        JMenuItem_Perfiles = new javax.swing.JMenuItem();
-        JMenuItem_Modulos = new javax.swing.JMenuItem();
-        JMenuItemCambioC = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Hotelero");
@@ -75,15 +73,26 @@ public class MDI_Sistema extends javax.swing.JFrame {
 
         JDesktopPane_Escritorio.setBackground(new java.awt.Color(0, 102, 153));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setText("Carlos Alberto Flores  De  paz  9959-19-186");
+
+        JDesktopPane_Escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout JDesktopPane_EscritorioLayout = new javax.swing.GroupLayout(JDesktopPane_Escritorio);
         JDesktopPane_Escritorio.setLayout(JDesktopPane_EscritorioLayout);
         JDesktopPane_EscritorioLayout.setHorizontalGroup(
             JDesktopPane_EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1350, Short.MAX_VALUE)
+            .addGroup(JDesktopPane_EscritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(544, Short.MAX_VALUE))
         );
         JDesktopPane_EscritorioLayout.setVerticalGroup(
             JDesktopPane_EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(JDesktopPane_EscritorioLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(jLabel1)
+                .addContainerGap(601, Short.MAX_VALUE))
         );
 
         JMenu_Archivo.setText("Archivo");
@@ -105,24 +114,6 @@ public class MDI_Sistema extends javax.swing.JFrame {
 
         JMenu_Asignaciones.setText("Asignaciones");
         JMenu_Asignaciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-
-        JMenuItem_AplicacionesUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_AplicacionesUsuario.setText("Aplicaciones - Usuario");
-        JMenuItem_AplicacionesUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_AplicacionesUsuarioActionPerformed(evt);
-            }
-        });
-        JMenu_Asignaciones.add(JMenuItem_AplicacionesUsuario);
-
-        JMenuItem_AplicacionesPerfiles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_AplicacionesPerfiles.setText("Aplicaciones - Perfiles");
-        JMenuItem_AplicacionesPerfiles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_AplicacionesPerfilesActionPerformed(evt);
-            }
-        });
-        JMenu_Asignaciones.add(JMenuItem_AplicacionesPerfiles);
 
         JMenuItem_PerfilesUsuarios.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         JMenuItem_PerfilesUsuarios.setText("Perfiles - Usuarios");
@@ -165,45 +156,22 @@ public class MDI_Sistema extends javax.swing.JFrame {
         });
         JMenu_Mantenimientos.add(JMenuItem_Usuarios);
 
-        JMenuItem_Aplicaciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_Aplicaciones.setText("Aplicaciones");
-        JMenuItem_Aplicaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_AplicacionesActionPerformed(evt);
-            }
-        });
-        JMenu_Mantenimientos.add(JMenuItem_Aplicaciones);
-
-        JMenuItem_Perfiles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_Perfiles.setText("Perfiles");
-        JMenuItem_Perfiles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_PerfilesActionPerformed(evt);
-            }
-        });
-        JMenu_Mantenimientos.add(JMenuItem_Perfiles);
-
-        JMenuItem_Modulos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        JMenuItem_Modulos.setText("Módulos");
-        JMenuItem_Modulos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItem_ModulosActionPerformed(evt);
-            }
-        });
-        JMenu_Mantenimientos.add(JMenuItem_Modulos);
-
         JMenu_Seguridad.add(JMenu_Mantenimientos);
 
-        JMenuItemCambioC.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        JMenuItemCambioC.setText("Cambio de contraseña");
-        JMenuItemCambioC.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(JMenu_Seguridad);
+
+        jMenu1.setText("Procesos");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jMenuItem1.setText("Recuperacion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMenuItemCambioCActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        JMenu_Seguridad.add(JMenuItemCambioC);
+        jMenu1.add(jMenuItem1);
 
-        jMenuBar1.add(JMenu_Seguridad);
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -235,58 +203,39 @@ public class MDI_Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_JMenuItem_CerrarSesionActionPerformed
 
 
-    private void JMenuItem_ModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_ModulosActionPerformed
-      
-    }//GEN-LAST:event_JMenuItem_ModulosActionPerformed
-
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
       
 
 
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
-
-    private void JMenuItem_AplicacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesActionPerformed
-    
-    }//GEN-LAST:event_JMenuItem_AplicacionesActionPerformed
-
-    private void JMenuItem_PerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_PerfilesActionPerformed
-       
-
-    }//GEN-LAST:event_JMenuItem_PerfilesActionPerformed
-
-    private void JMenuItem_AplicacionesPerfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesPerfilesActionPerformed
-        // TODO add your handling code here:
-     
-    }//GEN-LAST:event_JMenuItem_AplicacionesPerfilesActionPerformed
-
-    private void JMenuItem_AplicacionesModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesModulosActionPerformed
-        //  Asignacionmodulos Rita Sipaque
-     
-    }//GEN-LAST:event_JMenuItem_AplicacionesModulosActionPerformed
-
     private void JMenuItem_UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_UsuariosActionPerformed
-      
+
     }//GEN-LAST:event_JMenuItem_UsuariosActionPerformed
-
-    private void JMenuItem_PerfilesUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_PerfilesUsuariosActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_JMenuItem_PerfilesUsuariosActionPerformed
-
-    private void JMenuItem_AplicacionesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesUsuarioActionPerformed
-     
-    }//GEN-LAST:event_JMenuItem_AplicacionesUsuarioActionPerformed
-
-    private void JMenuItemCambioCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemCambioCActionPerformed
-     
-    }//GEN-LAST:event_JMenuItemCambioCActionPerformed
 
     private void JMenuItem_BitacoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_BitacoraActionPerformed
         formFmrBitacora = new FmrBitacora();
         formFmrBitacora.setVisible(true);
         JDesktopPane_Escritorio.add(formFmrBitacora);
     }//GEN-LAST:event_JMenuItem_BitacoraActionPerformed
+
+    private void JMenuItem_AplicacionesModulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_AplicacionesModulosActionPerformed
+        //  Asignacionmodulos Rita Sipaque
+
+    }//GEN-LAST:event_JMenuItem_AplicacionesModulosActionPerformed
+
+    private void JMenuItem_PerfilesUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItem_PerfilesUsuariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JMenuItem_PerfilesUsuariosActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+   proceso_recuperacion = new proceso_recuperacion();
+        proceso_recuperacion.setVisible(true);
+        JDesktopPane_Escritorio.add(proceso_recuperacion);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -303,9 +252,9 @@ public class MDI_Sistema extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new MDI_Sistema().setVisible(true);
+                    new contenedor().setVisible(true);
                 } catch (UnknownHostException ex) {
-                    Logger.getLogger(MDI_Sistema.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(contenedor.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -313,21 +262,18 @@ public class MDI_Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane JDesktopPane_Escritorio;
-    private javax.swing.JMenuItem JMenuItemCambioC;
-    public static javax.swing.JMenuItem JMenuItem_Aplicaciones;
     public static javax.swing.JMenuItem JMenuItem_AplicacionesModulos;
-    public static javax.swing.JMenuItem JMenuItem_AplicacionesPerfiles;
-    public static javax.swing.JMenuItem JMenuItem_AplicacionesUsuario;
     public static javax.swing.JMenuItem JMenuItem_Bitacora;
     private javax.swing.JMenuItem JMenuItem_CerrarSesion;
-    public static javax.swing.JMenuItem JMenuItem_Modulos;
-    public static javax.swing.JMenuItem JMenuItem_Perfiles;
     public static javax.swing.JMenuItem JMenuItem_PerfilesUsuarios;
     public static javax.swing.JMenuItem JMenuItem_Usuarios;
     public javax.swing.JMenu JMenu_Archivo;
     public static javax.swing.JMenu JMenu_Asignaciones;
     public static javax.swing.JMenu JMenu_Mantenimientos;
     public javax.swing.JMenu JMenu_Seguridad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
      */
     public static String usuarioSesion = "";
  
-private MDI_Sistema MDI_Sistema;
+private contenedor MDI_Sistema;
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
@@ -183,7 +183,7 @@ private MDI_Sistema MDI_Sistema;
                 }
  JOptionPane.showMessageDialog(null, "Bienvenido\n", "Mensaje de bienvenida", JOptionPane.INFORMATION_MESSAGE);
   usuarioSesion = txtUsuario.getText();
-                            MDI_Sistema menuGeneral = new MDI_Sistema();
+                            contenedor menuGeneral = new contenedor();
                             menuGeneral.setVisible(true);
                             this.dispose();
                 System.out.println(usuarioAConsultar.toString());
