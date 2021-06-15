@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c037aaf-74da-4753-9146-83f2d7b7d76a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM siu.recuperacion;]]>
+	</queryString>
+	<field name="carnet" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="carrera_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="curso_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jornada_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pago_alumno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="0" width="539" height="56" uuid="e308939e-5396-4caf-877c-e935b201545a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Reporte Proceso Recuperacion]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="20" uuid="3e1c6e64-035c-4d7a-a95b-7c6fc704f034"/>
+				<text><![CDATA[carnet]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="2" width="61" height="20" uuid="5642cf22-1441-4d10-8c14-0af4dc047620"/>
+				<text><![CDATA[nombre_alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="2" width="74" height="20" uuid="f0c8c54a-794c-416c-b317-fe36287e0364"/>
+				<text><![CDATA[carrera_alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="2" width="100" height="20" uuid="537e6179-c88c-4e9c-980b-9a565ced33cd"/>
+				<text><![CDATA[curso_alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="2" width="100" height="20" uuid="97051014-e5af-4df9-bb41-49959fbfc3d2"/>
+				<text><![CDATA[jornada_alumno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="498" y="2" width="100" height="20" uuid="c6709e09-ded1-4f76-9a04-d1469cb1cff2"/>
+				<text><![CDATA[pago_alumno]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="31" width="70" height="20" uuid="b1224b4c-7155-4b65-a15f-9c8bdc414c55"/>
+				<textFieldExpression><![CDATA[$F{carnet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="31" width="73" height="20" uuid="7d23230c-a089-4d37-95f4-5370535f97b9"/>
+				<textFieldExpression><![CDATA[$F{nombre_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="31" width="74" height="20" uuid="8dc76277-40bd-481f-ac41-17a46aae2b01"/>
+				<textFieldExpression><![CDATA[$F{carrera_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="31" width="100" height="20" uuid="cbcfa566-dcb1-404a-ad33-a8904276a80e"/>
+				<textFieldExpression><![CDATA[$F{curso_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="37" width="100" height="20" uuid="44cfa4cb-d43b-44bb-8b66-7da5af934d92"/>
+				<textFieldExpression><![CDATA[$F{jornada_alumno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="48" width="100" height="20" uuid="791e3779-7fc6-4b37-99e6-00ecb3b98843"/>
+				<textFieldExpression><![CDATA[$F{pago_alumno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

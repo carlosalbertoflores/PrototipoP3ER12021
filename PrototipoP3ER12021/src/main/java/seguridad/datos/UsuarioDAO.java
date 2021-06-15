@@ -14,7 +14,7 @@ import static java.util.Objects.hash;
 
 /**
  *
- * @author OtakuGT
+ * @author 
  */
 public class UsuarioDAO extends Conexion {
 
