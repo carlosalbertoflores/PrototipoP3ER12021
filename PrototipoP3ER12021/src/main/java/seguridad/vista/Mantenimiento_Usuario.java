@@ -37,7 +37,7 @@ import seguridad.dominio.Bitacora;
 
 /**
  *
- * @author OtakuGT
+ * @author 
  */
 public class Mantenimiento_Usuario extends javax.swing.JInternalFrame {
 
