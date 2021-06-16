@@ -18,6 +18,7 @@ import seguridad.dominio.Usuario;
 /**
  *
  * @author 
+ * los  omentrios de   de demas mantemimiento   maestros y sedes  se subieron
  */
 public class contenedor extends javax.swing.JFrame {
 
