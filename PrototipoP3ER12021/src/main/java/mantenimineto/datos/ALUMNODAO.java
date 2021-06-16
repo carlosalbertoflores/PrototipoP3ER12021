@@ -93,7 +93,7 @@ public class ALUMNODAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while(rs.next()){
-               String carnet_alumno = rs.getString("carnet_alumno1");
+               String carnet_alumno = rs.getString("carnet_alumno");
                 String nombre_alumno = rs.getString("nombre_alumno");
                 String direccion_alumno = rs.getString("direccion_alumno");
                 String telefono_alumno = rs.getString("telefono_alumno");
