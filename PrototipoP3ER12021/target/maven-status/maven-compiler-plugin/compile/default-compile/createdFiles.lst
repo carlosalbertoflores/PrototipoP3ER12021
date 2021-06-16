@@ -1,10 +1,10 @@
 seguridad\dominio\Bitacora.class
 mantenimineto\datos\ALUMNODAO.class
-proceso\vista\NewJInternalFrame.class
 seguridad\vista\contenedor$3.class
 mantenimineto\vista\mantenimineto_alumno$1.class
 seguridad\vista\Mantenimiento_Usuario$5.class
 seguridad\datos\BitacoraDao.class
+mantenimineto\vista\sedes.class
 seguridad\vista\MDI_Components.class
 seguridad\dominio\Permisos.class
 seguridad\vista\Mantenimiento_Usuario$1.class
@@ -13,6 +13,7 @@ seguridad\vista\FmrBitacora$2.class
 seguridad\vista\contenedor$6.class
 mantenimineto\vista\mantenimineto_alumno$2.class
 proceso\vista\proceso_recuperacion$5.class
+seguridad\vista\contenedor$7.class
 mantenimineto\vista\mantenimineto_alumno.class
 seguridad\vista\contenedor.class
 seguridad\vista\Login$4.class
@@ -30,6 +31,7 @@ seguridad\vista\Mantenimiento_Usuario$3.class
 seguridad\datos\Hash.class
 seguridad\vista\contenedor$1.class
 proceso\vista\proceso_recuperacion$4.class
+seguridad\vista\contenedor$8.class
 seguridad\vista\Login$3.class
 proceso\vista\proceso_recuperacion$8.class
 datos\CARRERADAO.class
@@ -45,9 +47,9 @@ seguridad\datos\UsuarioDAO.class
 seguridad\vista\Login$2.class
 proceso\vista\proceso_recuperacion$3.class
 seguridad\vista\FmrBitacora$3.class
-datos\SEDEDAO.class
 seguridad\vista\Mantenimiento_Usuario$4.class
 proceso\dominio\recuperacion.class
+mantenimineto\vista\maestros.class
 seguridad\vista\contenedor$5.class
 seguridad\dominio\Usuario.class
 mantenimiento\dominio\Alumno.class

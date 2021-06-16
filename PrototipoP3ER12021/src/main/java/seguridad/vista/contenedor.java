@@ -6,7 +6,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import mantenimineto.vista.maestros;
 import mantenimineto.vista.mantenimineto_alumno;
+import mantenimineto.vista.sedes;
 import proceso.vista.proceso_recuperacion;
 import seguridad.dominio.Usuario;
 
@@ -22,6 +24,8 @@ public class contenedor extends javax.swing.JFrame {
 private proceso_recuperacion proceso_recuperacion; 
     private FmrBitacora formFmrBitacora;
 private   mantenimineto_alumno   mantenimineto_alumno ;
+private   sedes sedes ;
+private    maestros maestros;
     /**
      * Creates new form MDI_Seguridad
      *
@@ -59,6 +63,8 @@ private   mantenimineto_alumno   mantenimineto_alumno ;
         jMenu1 = new javax.swing.JMenu();
         M_ccompras = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
@@ -114,6 +120,22 @@ private   mantenimineto_alumno   mantenimineto_alumno ;
             }
         });
         M_ccompras.add(jMenuItem3);
+
+        jMenuItem4.setText("Mantemimiento Maestro");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        M_ccompras.add(jMenuItem4);
+
+        jMenuItem5.setText("Mantemimiento Sede");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        M_ccompras.add(jMenuItem5);
 
         jMenuBar1.add(M_ccompras);
 
@@ -234,6 +256,22 @@ private   mantenimineto_alumno   mantenimineto_alumno ;
 
     }//GEN-LAST:event_cerrar_sesionMouseClicked
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+     maestros = new  maestros();
+         maestros.setVisible(true);
+        JDesktopPane_Escritorio.add( maestros);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    sedes = new sedes();
+        sedes.setVisible(true);
+        JDesktopPane_Escritorio.add(sedes);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -274,6 +312,8 @@ private   mantenimineto_alumno   mantenimineto_alumno ;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
